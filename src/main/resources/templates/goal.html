@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="goalApp">
+<head>
+<meta charset="UTF-8" />
+<title>Add goal</title>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/styles.css"/>
+</head>
+<body ng-controller="GoalNewController as goalCtrl">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.min.js"></script>
+	<script src="js/goalApp.js"></script>
+
+	<div ng-include="'navbar.htm'"></div>
+
+	<div class="container">
+		<div class="row">
+	        <div class="col-sm-12 col-md-8">
+		    	<form class="form-signin" method="post">
+		    		<h2 class="form-signin-heading">Add new goal</h2>
+		    		<br></br>
+		    		<label>Short description</label>
+			        <textarea maxlength="200" required="required" title="Short description can't be null" type="text" name="descShort"
+			        	class="form-control" placeholder="Short description" ng-model="goalCtrl.goal.descShort"></textarea>
+			        <br></br>
+			        <label>Description</label>
+			        <textarea maxlength="200" title="Description" type="text" name="descLong"
+			        	class="form-control" placeholder="Description" ng-model="goalCtrl.goal.descLong"></textarea>
+			        <div class="input-group bootstrap-timepicker timepicker col-md-2">
+			        <br></br>
+			        <label>Start date</label>
+			        <input id="timepicker" maxlength="200" type="date" name="dateStart" min="{{goalCtrl.today}}"
+			        	class="form-control" placeholder="Start date" ng-model="goalCtrl.goal.dateStart"></input>
+			        </div>
+			        <div class="input-group bootstrap-timepicker timepicker col-md-2">
+			        <br></br>
+			        <label>Scheduled end date</label>
+			        <input id="timepicker" maxlength="200" type="date" name="dateEnd" min="{{goalCtrl.today}}"
+			        	class="form-control" placeholder="Scheduled end date" ng-model="goalCtrl.goal.dateEnd"></input>
+			        </div>
+			        <br></br>
+			        <div class="col-md-3 pull-right">
+			        	<button class="btn btn-lg btn-important btn-block" ng-click="goalCtrl.saveGoal(goalCtrl.goal)">Submit</button>
+		    		</div>
+				</form>
+	    	</div>
+	    	<div class="col-sm-12 col-md-4">
+  				<h2>Tips:</h2>
+  				<h4>1. Goal form define overall objective. Fill form with your big objective.</h4>
+  				<h4>2. Always determine start date and scheduled end date. There's no-no time like the present.</h4>
+  				<h4>3. Your goal cannot be impersonal - write "I finish with smoking" instead of "Stop smoking".</h4>
+  				<h4>4. If you want to lose 15 kg, write "I'm loosing 25 kg" - bold goals boost your motivation more than normal goals.</h4>
+			</div>
+    	</div>
+	</div>
+	
+	<div ng-include="'footer.htm'"></div>
+	
+</body>
+</html>
+
+	

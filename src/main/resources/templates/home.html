@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>MyBoldGoals</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="/assets/css/styles.css"/>
+</head>
+<body class="loading">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script>
+	<script src="js/home.js"></script>
+
+	<!--  <div ng-include="'navbar.htm'"></div>-->
+	<div th:replace="fragments/navbar :: navbar"></div>
+
+	<div id="wrapper">
+		<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+	
+			<header id="header">
+				<h1>MyBoldGoals</h1>
+				<p>Set goals &nbsp;&bull;&nbsp; Achieve the objectives &nbsp;&bull;&nbsp; Win</p>
+				<nav>
+					<ul>
+						<li><a href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/scartout" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="http://www.twitter.com/share?url=https://github.com/scartout" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/scartout" class="icon fa-github"><span class="label">Github</span></a></li>
+					</ul>
+				</nav>
+			</header>
+	
+			<footer id="footer">
+				<span class="copyright">&copy; 2018 Developed by Pawel Dudek </span>
+				<span class="copyright">&copy; Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+			</footer>
+
+		</div>
+	</div>
+	
+</body>
+</html>

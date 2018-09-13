@@ -1,0 +1,11 @@
+<h2>Item details:</h2>
+<strong>End date</strong>
+<p>{{detailsCtrl.item.date | date:'yyyy-MM-dd'}}</p>
+<strong>Status</strong>
+<p>{{detailsCtrl.item.status}}</p>
+<strong>Short description</strong>
+<p>{{detailsCtrl.item.descShort}}</p>
+<div ng-if="detailsCtrl.item.descLong">
+<strong>Description</strong>
+<p>{{detailsCtrl.item.descLong}}</p>
+</div>

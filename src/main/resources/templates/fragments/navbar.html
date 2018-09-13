@@ -1,0 +1,31 @@
+<div th:fragment="navbar" class="navbar">
+    <div class="navbar-inner">    
+
+	<nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="container">
+        <a href="/" class="navbar-brand">MyBoldGoals <span><img src="images/fist.png" height="30" width="30"></img></span></a>        
+ 
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+            <span class="glyphicon glyphicon-list"></span>
+        </button>
+         
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/goal">Add goal</a></li>
+            <li><a href="/goals">Goals list</a></li>
+            <li><a href="/summary">Summary</a></li>
+	  			<li sec:authorize="!isAuthenticated()">
+	  				<a href="/login">Sign in</a>
+				</li>
+  				<li sec:authorize="isAuthenticated()">
+				    <form action="/logout" method="post" name="someForm"></form>
+					<a href="#" onclick="$(document.someForm).submit();">Log out</a>
+    			</li>
+
+           </ul>
+        </div> 
+      </div>
+	</nav>
+
+	</div>
+</div>

@@ -1,0 +1,146 @@
+/* Custom styles */
+
+/* GENERAL */
+
+body, html{
+	overflow: auto;	
+}
+
+body{
+	height: calc(100vh - 160px);
+}
+
+.btn-important{
+	background-color: #631000;
+	color: #FFFFFF;
+}
+
+.btn-important:hover,
+.btn-important:focus{
+	background-color: #300b04;
+	color: #e3e3e3;
+}
+
+/* NAVBAR */
+
+.navbar{
+	height: 60px;
+}
+
+.navbar-custom{
+	background-color: #631000;	
+}
+
+.navbar-custom a{
+	color: #FFFFFF;
+	font-size: 18px;
+	line-height: 30px!important;
+	letter-spacing: 2px;
+}
+
+.navbar-custom li{
+	height: 60px;
+}
+
+.navbar-custom a:hover,
+.navbar-custom a:focus{
+	color: #e3e3e3;
+	background-color: #631000!important;
+}
+
+/* FOOTER */
+
+.footer_custom{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #FFFFFF;
+	background-color: #631000;
+	height: 160px;
+}
+
+.footer_links a{
+	display: inline-block;
+	margin: 10px 0;
+	color: #FFFFFF;
+}
+
+.footer_author p{
+	display: inline-block;
+	margin: 10px 0;
+}
+
+.footer_author a{
+	color: yellow;
+}
+
+.footer_links a:hover,
+.footer_links a:focus{
+	color: #e3e3e3;
+	background-color: #631000!important;
+	text-decoration: none;
+}
+
+/* VALIDATION */
+
+.req_field{
+	width: 100%;
+	margin: 5px 0px 10px;
+	height: 40px;
+	font-size: 16px;
+	letter-spacing: 3px;
+	padding: 0 20px;
+	border: #e5e5e5 solid 1px;
+}
+
+.empty_input{
+	color: #300b04;
+	font-weight: bold;
+}	
+
+/* SUMMARY */
+
+.summary_table td,
+.items_table td{
+	position: relative;
+}
+
+.summary_table form,
+.items_table form{
+	position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 768px) {
+	.navbar-nav{
+		margin: 60px 0 0 0;
+		background: #631000;
+	}
+	
+	.navbar-nav li{
+		height: 50px;
+	}
+	
+	.navbar-nav a{
+		background: #300b04;
+	}
+	
+	.container > .navbar-collapse{
+		margin-right: -30px;
+		margin-left: -30px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+    .footer_links a{
+		margin: 5px 0;
+	}
+	
+	.footer_author p{
+		margin: 5px 0;
+	}
+}

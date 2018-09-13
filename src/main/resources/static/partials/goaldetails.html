@@ -1,0 +1,11 @@
+<h2>Goal details:</h2>
+<strong>Date start</strong>
+<p>{{detailsCtrl.goal.dateStart | date:'yyyy-MM-dd'}}</p>
+<strong>Date end</strong>
+<p>{{detailsCtrl.goal.dateEnd | date:'yyyy-MM-dd'}}</p>
+<strong>Short description</strong>
+<p>{{detailsCtrl.goal.descShort}}</p>
+<div ng-if="detailsCtrl.goal.descLong">
+<strong>Description</strong>
+<p>{{detailsCtrl.goal.descLong}}</p>
+</div>

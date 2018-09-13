@@ -1,0 +1,27 @@
+<div th:fragment="footer">
+
+	<footer class="footer footer_custom">
+		<div class="container">
+			<div class="col-xs-4 footer_links">
+				<div><a href="/goal">Add goal</a></div>
+				<div><a href="/goals">Goals list</a></div>
+				<div><a href="/summary">Summary</a></div>
+				<div sec:authorize="!isAuthenticated()">
+					<a href="/login">Sign in</a>
+				</div>
+				<div sec:authorize="isAuthenticated()">
+				    <form action="/logout" method="post" name="someForm"></form>
+					<a href="#" onclick="$(document.someForm).submit();">Log out</a>
+		  		</div>
+	  		</div>
+	  		<div class="col-xs-4"></div>
+	  		<div class="col-xs-4">
+	  			<div class="footer_author">
+	  				<p>&#169; 2018 Developed by Pawel Dudek</p>
+	  				<p class="copyright">&#169; Design: <a href="http://html5up.net">HTML5 UP</a>.</p>
+	  			</div>
+	  		</div>
+  		</div>
+	</footer>
+
+</div>

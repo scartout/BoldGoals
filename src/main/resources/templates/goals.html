@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="goalApp">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Goals</title>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/assets/css/styles.css"/>
+</head>
+<body ng-controller="GoalController as goalCtrl">
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.min.js"></script>
+	<script src="js/goalApp.js"></script>
+	
+	<div ng-include="'navbar.htm'"></div>
+    
+	<div class="container">
+		<div class="row">
+		  	<div class="col-sm-12 col-md-8" ng-if="goalCtrl.goals.length > 0">
+				<div>
+				  	<h2>Goals list</h2>    
+    				<input type="text" placeholder="Search..." ng-model="search"/>
+				  	<table class="table table-striped">
+			            <thead>
+			            <tr>
+			                <th ng-click="goalCtrl.sort('dateStart')">Date start</th>
+			                <th ng-click="goalCtrl.sort('dateEnd')">Date end</th>
+			                <th ng-click="goalCtrl.sort('descShort')">Short description</th>
+			                <th>Details</th>
+			                <th>View items</th>
+			                <th>Add item</th>
+			                <th>Delete goal</th>
+			            </tr>
+			            </thead>
+			            <tbody>
+			            <tr ng-repeat="goal in goalCtrl.goals | filter:search | orderBy:goalCtrl.sortt">
+			                <td>{{goal.dateStart | date:'yyyy-MM-dd'}}</td>
+			                <td>{{goal.dateEnd | date:'yyyy-MM-dd'}}</td>
+			                <td>{{goal.descShort}}</td>
+			                <td>
+			                	<a ng-href="#!details/{{goal.id}}">Details</a>
+							</td>
+							<td>
+			                	<form action="/items" method="post" >
+				    				<input type="hidden" name="goalId" value="{{goal.id}}"/>
+				    				<input class="btn btn-default" type="submit" value="Items view" />
+			    				</form>
+			                </td>
+			                <td>
+								<form action="/item" method="post" >
+				    				<input type="hidden" name="goalId" value="{{goal.id}}"/>
+				    				<input class="btn btn-default" type="submit" value="Add item" />
+			    				</form>
+							</td>
+							<td>
+								<button class="btn btn-important btn-block" ng-click="goalCtrl.remove(goal.id)">Remove</button>
+							</td>
+			            </tr>
+			            </tbody>
+			       </table>
+				</div>
+			</div>
+	        <div class="col-xs-8" ng-if="goalCtrl.goals.length == 0">
+	        	<h2>You have no goals</h2>
+	        	<h2><a href="/goal">Add them now</a></h2>
+        	</div>
+        	<div class="col-sm-12 col-md-4">
+        		<div ng-view=""></div>
+        	</div>
+		</div>
+	</div>
+	
+	<div ng-include="'footer.htm'"></div>
+	
+</body>
+</html>
