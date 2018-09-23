@@ -18,18 +18,8 @@ Set your goals, only bold goals and stay on track to achieve them. Application s
 
 ## Technologies used:
 
-- Spring
-- Spring Boot
-- Spring Security
-- Hibernate
-- HTML
-- CSS
-- JavaScript
-- Angular.js v1.7.2
-- Underscore.js
-- JPA
-- Bootstrap
-- SHA
+- Spring, Spring Boot, Spring Security, Hibernate, JPA
+- JavaScript, JQuery, HTML, CSS, Bootstrap
+- Angular.js 1.7.2, Underscore.js
 - Maven
-- JUnit
-- EqualsVerifier
+- JUnit, EqualsVerifier
